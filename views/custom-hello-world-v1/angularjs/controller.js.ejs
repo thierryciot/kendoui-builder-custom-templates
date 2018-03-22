@@ -5,8 +5,10 @@ class BaseController {
         this.$scope = $scope;
         this.$dataProviderService = $injector.get('providerService');
         this.$dsService = $injector.get('dsService');
+
+        // Add view properties to the model
         this.$model = <%- options %>;
-        debugger;
+        //debugger;
     }
 
     $onInit() {
