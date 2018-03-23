@@ -16,7 +16,7 @@
     "greeting": {
       "type": "string",
       "title": "Greeting",
-      "description": "The string appended to hello world",
+      "description": "The string prepended to world",
       "default": "Salutations",
       "order": 2
     }
