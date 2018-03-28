@@ -9,7 +9,11 @@
 %>
 <h2 ng-bind-html="vm.$model.title"></h2>
 
-<div ng-click="vm.$model.events.onClick($event)">
+<div
+        <% if (events.onClick) { %>
+        ng-click="vm.<%- events.onClick %>($event)"
+        <% } %>
+>
     {{vm.$model.greeting}}&nbsp;World
 </div>
 Version: V2

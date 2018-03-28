@@ -3,18 +3,5 @@
 %>
 {
     "title": "<%- title %>",
-    "greeting": "<%- greeting %>",
-    events: {
-        onClick: (e) => {
-        debugger;
-        var that = this;
-        var fct = this['onClick'];
-        var fct2 = this['onClick2'];
-        if ( fct !== undefined )
-            fct(e);
-        <% if (events.onClick) { %>
-            this['<%- events.onClick %>'](e);
-        <% } %>
-        }
-    }
+    "greeting": "<%- greeting %>"
 }
