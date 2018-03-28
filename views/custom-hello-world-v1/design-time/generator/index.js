@@ -3,7 +3,11 @@
     console.log("Trace: in design time generator" );
 
     module.exports = {
-        augmentModel: function(metaModel) {
+        augmentModel: function(inMemoryMetaModel, metafolderPath) {
+            // There is only one entry point for extension
+            // you can add prop to model
+            // change a prop
+            // delete a prop
             // try {
             // }
             // catch ( e ) {
