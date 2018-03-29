@@ -1,0 +1,16 @@
+<%#
+    This renders the view at runtime.
+    The items defined in options.json.ejs are available from the model.
+    We can access public members from viewName.base.component.ts.ejs and from public which is viewName.component.ts
+
+    Note: This is an EJS comment - it won't show in the html output - See http://ejs.co/#docs for details
+%>
+<h2>{{title}}</h2>
+
+<div
+    <% if (view.events.onClick) { %>
+        (click)="<%- view.events.onClick %>($event)"
+    <% } %>
+>
+    {{greeting}}&nbsp;World V2
+</div>
