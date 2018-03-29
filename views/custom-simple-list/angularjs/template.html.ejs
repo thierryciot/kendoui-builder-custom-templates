@@ -1,0 +1,28 @@
+<%#
+    This renders the view at runtime.
+    The items defined in options.json.ejs are available from the model.
+    The model is added to the variable vm.$model (view model) in the controller (See controller.js.ejs).
+
+    In this template we can use AngularJS expressions, for example, {{vm.$model.title}} to access the title property.
+
+    Note: This is an EJS comment - it won't show in the html output - See http://ejs.co/#docs for details
+%>
+<h2 ng-bind-html="vm.$model.title"></h2>
+
+<div>
+    Items from myList array:
+    <ul>
+        <li ng-repeat="item in vm.$model.myList">
+            {{item.id}}: {{item.name}}
+        </li>
+    </ul>
+</div>
+
+<div>
+    Items from Kendo UI data source:
+    <ul>
+        <li ng-repeat="item in vm.$model.myList2">
+            {{item.id}}: {{item.name}}
+        </li>
+    </ul>
+</div>
