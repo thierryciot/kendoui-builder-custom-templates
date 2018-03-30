@@ -3,10 +3,11 @@
     console.log("Trace: in design time generator" );
 
     module.exports = {
+        // Note: when changing this, need to restart kuib as it appears results are cached.
         augmentModel: function(metaModel) {
             const sampleData =
-                [ { 'id': 1, 'name': 'test 1' }
-                    , { 'id': 2, 'name': 'test 2' }
+                [ { 'id': 1, 'name': 'Sample data test 1 (from augmentModel)' }
+                , { 'id': 2, 'name': 'Sample data test 2' }
                 ];
             metaModel.sampleData = sampleData;
             // try {
