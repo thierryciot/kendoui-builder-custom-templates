@@ -3,25 +3,23 @@
 <h2><%- title %></h2>
 
 <div class="col-lg-12">
+    Simple list output using AngularJs method
     <ul>
-
+        <li ng-repeat="item in myList">
+            id: {{item.id}} name: {{item.name}}
+        </li>
     </ul>
+</div>
 
+<div class="col-lg-12">
+    Simple list output using ejs method
     <ul>
-        <li>
-            Item 1
-        </li>
-        <li>
-            Item 2
-        </li>
-        <li>
-            Item 3
-        </li>
-
-        <% if (typeof test === 'undefined') { %>
-        fasle
-        <% } else { %>
-        true
-        <% } %>
-            </ul>
+        <% sampleData.forEach(item => { %>
+            <li>
+            <% Object.keys(item).forEach(key => { %>
+                <%- key %>: <%- item[key] %>
+            <% }) %>
+            </li>
+        <% })%>
+    </ul>
 </div>
