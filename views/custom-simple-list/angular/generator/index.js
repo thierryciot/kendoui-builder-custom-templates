@@ -9,12 +9,12 @@
          * @param {string} metaPath - The path to the folder containing the meta information for the application.
          */
         augmentModel(metaModel, metaPath) {
-            var myList3 =
+            var myList =
                 [ { 'id': 1, 'name': 'test 1 (sample data from index.js augmentModel)' }
                     , { 'id': 2, 'name': 'test 2' }
                 ];
 
-            metaModel.myList3 = myList3;
+            metaModel.myList4 = myList;
         }
 
         getViewChildComponents(view) {

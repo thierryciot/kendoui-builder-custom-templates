@@ -18,20 +18,19 @@ import { DataServiceFactory } from '../../../core/data/data-service-factory';
 })
 export class <%- classifiedViewName %>BaseComponent implements OnInit, AfterViewInit, OnDestroy {
 
+    public $config: any = <%- viewConfig %>;
+
     // Here we need to create the properties we will access from the template
     // We access metadata properties from the view object
     public title: string = "<%- view.title %>";
+
+    // Define some sample data
     public myList = [ { 'id': 1, 'name': 'test 1 (sample data from base.component.ts.ejs)' }
                     , { 'id': 2, 'name': 'test 2' }
                     ];
 
-    // This one is defined from config.json.ejs
-    public myList3 = <%- pretty(viewConfig.myList3, undefined, undefined, true) %>;
-
     // This one is defined from the augmented metadata model from index.js
-    public myList4 = <%- pretty(myList3, undefined, undefined, true) %>;
-
-    public $config: any = <%- viewConfig %>;
+    public myList4 = <%- pretty(view.myList4, undefined, undefined, true) %>;
 
     constructor(public injector: Injector) {
     }
