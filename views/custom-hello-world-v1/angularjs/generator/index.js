@@ -14,6 +14,8 @@
         augmentModel(metaModel, metaPath) {
             var options = {
             };
+
+            // This is to workaround a bug in kuib V2 where the view label is not included in translation keys
             //  we are building a unique key like this modules.HelloWorld.views.HWV1.label
             // provide keys for properties.
             const keyPrefix = `modules.${ metaModel.moduleName }.views.${ metaModel.name }`;
@@ -26,7 +28,6 @@
         getTranslation(view)
         {
             // provide default values for properties
-            //const editMessages = Object.assign(view.editOptions.toolbarButtonLabels, view.editOptions.rowButtonLabels);
             const translation = {
                 label: view.label || view.name,
                 title: view.title,
