@@ -21,9 +21,15 @@ export class <%- classifiedViewName %>BaseComponent implements OnInit, AfterView
     // Here we need to create the properties we will access from the template
     // We access metadata properties from the view object
     public title: string = "<%- view.title %>";
-    public myList = [ { 'id': 1, 'name': 'test 1' }
+    public myList = [ { 'id': 1, 'name': 'test 1 (sample data from base.component.ts.ejs)' }
                     , { 'id': 2, 'name': 'test 2' }
                     ];
+
+    // This one is defined from config.json.ejs
+    public myList3 = <%- pretty(viewConfig.myList3, undefined, undefined, true) %>;
+
+    // This one is defined from the augmented metadata model from index.js
+    public myList4 = <%- pretty(myList3, undefined, undefined, true) %>;
 
     public $config: any = <%- viewConfig %>;
 
