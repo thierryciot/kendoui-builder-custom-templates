@@ -11,7 +11,7 @@ class BaseController {
         //debugger;
 
         var sampleData =
-            [ { 'id': 1, 'name': 'test 1' }
+            [ { 'id': 1, 'name': 'test 1 (sample data from controller.js.ejs)' }
             , { 'id': 2, 'name': 'test 2' }
             ];
 
@@ -33,6 +33,9 @@ class BaseController {
             debugger;
             that.$model.myList2 = this.data();
         });
+
+        // Another way to get list from metaData
+        this.$model.myList4 = <%- pretty(myList3, undefined, undefined, true) %>
     }
 
     $onInit() {

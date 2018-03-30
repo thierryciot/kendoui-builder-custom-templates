@@ -26,3 +26,21 @@
         </li>
     </ul>
 </div>
+
+<div>
+    Items from augmented model (index.js -> augmentModel):
+    <ul>
+        <li ng-repeat="item in vm.$model.myList3">
+            {{item.id}}: {{item.name}}
+        </li>
+    </ul>
+</div>
+
+<div>
+    Items from augmented model (index.js -> augmentModel) and passed via controller:
+    <ul>
+        <li ng-repeat="item in vm.$model.myList4">
+            {{item.id}}: {{item.name}}
+        </li>
+    </ul>
+</div>
