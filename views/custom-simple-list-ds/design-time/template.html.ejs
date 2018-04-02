@@ -3,13 +3,31 @@
 <h2><%- title %></h2>
 
 <div class="col-lg-12">
-    Simple list output
+    Simple list will output the following fields from your REST service
     <ul>
-        <li ng-repeat="item in myList">
-            id: {{item.id}} name: {{item.name}}
-        </li>
+        <% myDataSrcFields.forEach(item => { %>
+        <span>
+            <%- item.label %>
+        </span>&nbsp;
+        <% })%>
     </ul>
 </div>
 
+<%#
+    we recommend to show an image of the typical representation of the custom view
+%>
 <!-- TBD: Need a property with path to design time -->
 <img src="./templates/views/custom-simple-list-ds/design-time/simpleListDesignTimePreview.png"/>
+
+
+<hr>
+<h4>Output for debugging</h4>
+
+Number of fields from REST: <%- myDataSrcFields.length %>
+<br/>
+Current directory: <%- dirName %>
+<br/>
+Directory with data provider metadata: <%- dirName2 %>
+<br/>
+The end of debugging output
+<hr>

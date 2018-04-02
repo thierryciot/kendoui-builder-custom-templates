@@ -1,6 +1,11 @@
 (function (module) {
     'use strict';
 
+    // Only for KUIB V3:
+    // we have config metadata for each data provider.  for every DS KUIB generates config.
+    // For each DS KUIB creates a service with this config.
+    // The service is kept $ds
+    // The way to access the configured rest fields is to access the meta file using node js APIs for path and fs (code needs to be synchronous)
     class Generator {
         // can use augment model too.
         /*
