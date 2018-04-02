@@ -1,0 +1,35 @@
+<%#
+    This renders the view at runtime.
+    The items defined in options.json.ejs are available from the model.
+    We can access public members from viewName.base.component.ts.ejs and from public which is viewName.component.ts
+
+    metadata properties need to be prefixed with view.
+%>
+<h2>{{title}}</h2>
+
+<div style="margin-bottom: 1.5rem;">
+    Simple list from sample data defined directly in component (base.component.ts.ejs)
+    <ul style="margin: 1rem;">
+        <li *ngFor="let item of myList">
+            {{item.id}}: {{item.name}}
+        </li>
+    </ul>
+</div>
+
+<div style="margin-bottom: 1.5rem;">
+    Simple list from sample data defined in config.json.ejs:
+    <ul style="margin: 1rem;">
+        <li *ngFor="let item of $config.myList3">
+            {{item.id}}: {{item.name}}
+        </li>
+    </ul>
+</div>
+
+<div style="margin-bottom: 1.5rem;">
+    Simple list from sample data defined in augmented model (index.js -> augmentModel):
+    <ul style="margin: 1rem;">
+        <li *ngFor="let item of myList4">
+            {{item.id}}: {{item.name}}
+        </li>
+    </ul>
+</div>
