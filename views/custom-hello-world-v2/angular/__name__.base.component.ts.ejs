@@ -36,4 +36,11 @@ export class <%- classifiedViewName %>BaseComponent implements OnInit, AfterView
 
     public ngOnDestroy(): void {
     }
+
+<%# Provide a default implementation for onClick event if defined in metadata %>
+<% if (view.events.onClick) { %>
+    public <%- view.events.onClick %>(e): void {
+        alert(`<%- classifiedViewName %>: in default implementation for <%- view.events.onClick %> - You should override this function in the public component class.`);
+    }
+<% } %>
 }
