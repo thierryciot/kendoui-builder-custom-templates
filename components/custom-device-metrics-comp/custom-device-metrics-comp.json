@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "custom-device-metrics-comp",
+  "name": "custom-device-metrics-comp",
+  "description": "Component showing some metrics from an IoT device",
+  "type": "object",
+  "category": "Custom",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "../definitions/valid-component-id.json"
+        },
+        {
+          "type": "string",
+          "title": "Id",
+          "description": "The Id of the component",
+          "default": "",
+          "minLength": 1
+        }
+      ],
+      "order": 1
+    },
+    "metric1": {
+      "type": "string",
+      "title": "Metric 1",
+      "description": "Label for first Device reported metric",
+      "default": "Metric 1",
+      "order": 2
+    },
+    "metric2": {
+      "type": "string",
+      "title": "Metric 2",
+      "description": "Label for second Device reported metric",
+      "default": "Metric 2",
+      "order": 3
+    }
+  },
+  "required": [
+    "id"
+  ]
+}
