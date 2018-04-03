@@ -8,6 +8,21 @@
 <h2>{{title}}</h2>
 
 <div style="margin-bottom: 1.5rem;">
+    <% myDataSrcFields.forEach(item => { %>
+        <span>
+            Field: <%- item.label %>
+        </span>&nbsp;
+    <% })%>
+
+    Simple list from REST service call
+    <ul style="margin: 1rem;">
+        <li *ngFor="let item of myRestList">
+            {{item.id}}: {{item.name}}
+        </li>
+    </ul>
+</div>
+
+<div style="margin-bottom: 1.5rem;">
     Simple list from sample data defined directly in component (base.component.ts.ejs)
     <ul style="margin: 1rem;">
         <li *ngFor="let item of myList">
