@@ -40,6 +40,13 @@ export class <%- classifiedViewName %>BaseComponent implements OnInit, AfterView
     // Option 1: do everything by hand using Angular Http client service => need to create the url , ect... and then use Angular component/view binding (like tutorial)
     // Option 2: to use our data service.
 
+    // List of fields generated from metadata
+    public myRestFields = [
+        <% view.myDataSrcFields.forEach(item => { %>
+            "<%- item.label %>",
+        <% })%>
+    ];
+
     constructor(public injector: Injector) {
         <%- include('./data-services/data-properties-initialization.ts.ejs', { viewDataSources: view.viewDataSources }); -%>
     }
@@ -56,9 +63,9 @@ export class <%- classifiedViewName %>BaseComponent implements OnInit, AfterView
         const dataService = this.$dataServices[dataSourceName];
 
         const results: Observable<any> = dataService.dataChanges();
-            results.map(data => {
-            debugger;
-            return response ? response.data : [];
+            results.map(response => {
+                debugger;
+                return response ? response.data : [];
             }).subscribe(data => this.myRestList = data);
 
         <%# use the KUIB builtin data service %>
