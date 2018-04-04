@@ -57,6 +57,7 @@
             const contents = fs.readFileSync(pathToDataProviderFile);
             const dataProvider = JSON.parse(contents);
             const dataSource = dataProvider.children.find(dataSource => dataSource.name === metaModel.dataSource);
+            metaModel.myDataSrcFields = dataSource['fields']; // We give it a very unique name so that it's easy to find in code
 
             metaModel.viewDataSources = {
                 [dataSource.name]: this.getDataSourceContext(dataProvider, dataSource)
