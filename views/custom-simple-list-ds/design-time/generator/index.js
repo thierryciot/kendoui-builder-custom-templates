@@ -18,6 +18,7 @@
                 return;
             }
 
+            // Read data source fields from the metadata directly from file system
             const pathToDataProviderFile = path.join(__dirname,'..','..','..','..','..',`./meta/dataProviders/${metaModel.dataProvider}.json`);
 
             // For troubleshooting/debugging -> used it to output value in template
