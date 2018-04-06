@@ -1,6 +1,8 @@
 (function(module) {
     'use strict';
-    console.log("Trace: in design time generator" );
+    // Right now there is no direct access to the generator output.
+    // However, if you start KUIB from the command line, you will be able to see console messages.
+    // console.log("Trace: in design time generator" );
 
     module.exports = {
         augmentModel: function(inMemoryMetaModel, metafolderPath) {
