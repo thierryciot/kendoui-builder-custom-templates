@@ -7,8 +7,8 @@
 
     Note: This is an EJS comment - it won't show in the html output - See http://ejs.co/#docs for details
 %>
-<h2 ng-bind-html="vm.$model.titleY"></h2>
+<h2>{{vm.$model.titleY}}</h2>
 
 <div>
-    {{vm.$model.greeting}}&nbsp;World V1
+    <span ng-bind-html="vm.$model.greeting"></span>&nbsp;World V1
 </div>
