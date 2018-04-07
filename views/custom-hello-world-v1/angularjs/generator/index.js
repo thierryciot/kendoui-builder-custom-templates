@@ -12,17 +12,15 @@
          * @param {string} metaPath - The path to the folder containing the meta information for the application.
          */
         augmentModel(metaModel, metaPath) {
-            var options = {
-            };
-
             // This is to workaround a bug in kuib V2 where the view label is not included in translation keys
-            //  we are building a unique key like this modules.HelloWorld.views.HWV1.label
+            // we are building a unique key like this modules.HelloWorld.views.HWV1.label
             // provide keys for properties.
             const keyPrefix = `modules.${ metaModel.moduleName }.views.${ metaModel.name }`;
-            metaModel.labelKey = `${keyPrefix}.label`;
-            metaModel.titleKey = `${keyPrefix}.title`;
+            // metaModel.labelKey = `${keyPrefix}.label`;
+            // metaModel.titleKey = `${keyPrefix}.title`;
+
             // This is how we would provide a translation to view properties
-            metaModel.greetingKey = `${keyPrefix}.greeting`;
+            // metaModel.greetingKey = `${keyPrefix}.greeting`;
         }
 
         getTranslation(view)
@@ -30,7 +28,7 @@
             // provide default values for properties
             const translation = {
                 label: view.label || view.name,
-                title: view.title,
+                title: view.titleX,
                 greeting: view.greeting
             };
 
