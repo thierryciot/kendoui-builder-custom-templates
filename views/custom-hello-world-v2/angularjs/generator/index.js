@@ -1,5 +1,6 @@
 (function(module) {
     'use strict';
+    console.log("Trace: in runtime generator" );
 
     class Generator {
         constructor(mb, pretty) {
@@ -21,5 +22,4 @@
         return new Generator(mb, pretty);
     };
 
-    console.log("Trace: in runtime generator" );
 })(module);
