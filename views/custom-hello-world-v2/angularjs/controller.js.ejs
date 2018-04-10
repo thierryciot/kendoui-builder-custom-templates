@@ -33,6 +33,13 @@ class BaseController {
         this.$scope.$on('$destroy', this._$destroy.bind(this));
     }
 
+<%# Provide a default implementation for onClick event if defined in metadata %>
+<% if (view.events.onClick) { %>
+    public <%- view.events.onClick %>(e): void {
+        alert(`<%- classifiedViewName %>: in default implementation for <%- view.events.onClick %> - You should override this function in the public component class.`);
+    }
+<% } %>
+
     _$errorHandler(e) {
         const message = this.$dsService.extractErrorMessage(e);
 
