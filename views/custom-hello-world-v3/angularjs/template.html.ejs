@@ -10,5 +10,8 @@
 <h2>{{vm.$model.titleY}}</h2>
 
 <div>
-    <span ng-bind-html="vm.$model.greeting"></span>&nbsp;World V1
+    <span ng-bind-html="vm.$model.greeting"></span>&nbsp;World {{vm.$model.version}}
 </div>
+<br />
+<br />
+Built on {{vm.$model.generatedAt}}

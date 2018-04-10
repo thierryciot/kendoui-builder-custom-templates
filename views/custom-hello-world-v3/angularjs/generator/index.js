@@ -12,8 +12,9 @@
          * @param {string} metaPath - The path to the folder containing the meta information for the application.
          */
         augmentModel(metaModel, metaPath) {
-            var options = {
-            };
+            // We add an additional property.
+            metaModel.generatedAt = new Date().toLocaleDateString("en-US");
+            console.log("Trace: in angular js generator: metaModel.generatedAt: " + metaModel.generatedAt);
 
             // This is to workaround a bug in kuib V2 where the view label is not included in translation keys
             //  we are building a unique key like this modules.HelloWorld.views.HWV1.label

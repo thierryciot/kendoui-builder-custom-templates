@@ -3,6 +3,9 @@
     We can use the value of view properties by using the names defined in custom-hello-world-v1.json
     For example, titleX is defined as a string property.
 
+    titleX is html escaped
+    greeting is output unescaped so that we can use html tags in it.
+
     Note: This is an EJS comment - it won't show in the html output - See http://ejs.co/#docs for details
 
 <script>
@@ -17,19 +20,11 @@
 <div class="col-lg-12">
     <div style="font-size: large"><%- greeting %> World</div>
 
+    <%# This is an example of a property that is defined in options.json.ejs %>
     <div style="font-size: smaller">Version: {{ version }}</div>
 
     <br/>
     <br/>
-    Using AngularJs syntax bound property from isolated scope: {{greeting}} World
-
-    <!-- TODO:
-     This is an example of a property that is not defined in view properties (user cannot edit it at design time)
-     but is defined in options.json.ejs
-     Should show an example with a kendoui component calendar current date how to set in option
-     right now greeting2 is mapped to greeting in options.json.ejs
-     -->
-    <br/>Showing a property that is not defined in view properties but is defined in options.json.ejs: {{ greeting2 }}
-    <br/>
-    <br/>Template Generated At: {{ generatedAt }} <%#- generatedAt %>
+    <%# This is an example of a property that is defined in index.js, function augmentModel %>
+    <br/>Template Generated on <%- generatedAt %>
 </div>
