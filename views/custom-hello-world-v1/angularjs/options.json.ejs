@@ -2,6 +2,6 @@
     This is where we define which view properties will get added to the model in the controller.
 %>
 {
-    "titleY": "<%- titleX %>",
+    "titleY": "<%- titleX.replace(/"/g, '\\"') %>",
     "greeting": "<%- greeting.replace(/"/g, '\\"') %>"
 }
