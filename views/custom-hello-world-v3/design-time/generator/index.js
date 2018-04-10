@@ -6,20 +6,14 @@
 
     module.exports = {
         augmentModel: function(inMemoryMetaModel, metafolderPath) {
-            // There is only one entry point for extension
-            // you can add prop to model
-            // change a prop
-            // delete a prop
-            // inMemoryMetaModel.generatedAt = new Date();
-            const myDate = new Date();
-            inMemoryMetaModel.generatedAt = myDate;
-            console.log("Trace: in design time generator: inMemoryMetaModel.generatedAt: " + inMemoryMetaModel.generatedAt);
+            // Greeting is defined as it comes from meta\modules\myModuleName.json
             console.log("Trace: in design time generator: inMemoryMetaModel.greeting: " + inMemoryMetaModel.greeting);
-            // try {
-            // }
-            // catch ( e ) {
-            //     console.log("ERROR in augmentModel" + e );
-            // }
+            // version comes from options is not yet defined
+            console.log("Trace: in design time generator: inMemoryMetaModel.version: " + inMemoryMetaModel.version);
+
+            // now we add an additional property.
+            inMemoryMetaModel.generatedAt = new Date().toLocaleDateString("en-US");
+            console.log("Trace: in design time generator: inMemoryMetaModel.generatedAt: " + inMemoryMetaModel.generatedAt);
         }
     };
 })(module);

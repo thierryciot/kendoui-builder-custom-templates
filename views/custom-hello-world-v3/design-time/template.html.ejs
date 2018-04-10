@@ -20,19 +20,11 @@
 <div class="col-lg-12">
     <div style="font-size: large"><%- greeting %> World</div>
 
+    <%# This is an example of a property that is defined in options.json.ejs %>
     <div style="font-size: smaller">Version: {{ version }}</div>
 
     <br/>
     <br/>
-    Using AngularJs syntax bound property from isolated scope: {{greeting}} World
-
-    <!-- TODO:
-     This is an example of a property that is not defined in view properties (user cannot edit it at design time)
-     but is defined in options.json.ejs
-     Should show an example with a kendoui component calendar current date how to set in option
-     right now greeting2 is mapped to greeting in options.json.ejs
-     -->
-    <br/>Showing a property that is not defined in view properties but is defined in options.json.ejs: {{ greeting2 }}
-    <br/>
-    <br/>Template Generated At: {{ generatedAt }} <%#- generatedAt %>
+    <%# This is an example of a property that is defined in index.js, function augmentModel %>
+    <br/>Template Generated on <%- generatedAt %>
 </div>
