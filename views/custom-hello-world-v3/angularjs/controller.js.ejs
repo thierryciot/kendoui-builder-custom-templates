@@ -2,13 +2,16 @@
 
 class BaseController {
     constructor($scope, $injector) {
+<%#
+    This is where the options are added to the model during code generation time.
+%>
+        // Add KUIB view properties to the model
+        this.$model = <%- options %>;
+        //debugger;
+
         this.$scope = $scope;
         this.$dataProviderService = $injector.get('providerService');
         this.$dsService = $injector.get('dsService');
-
-        // Add view properties to the model
-        this.$model = <%- options %>;
-        //debugger;
     }
 
     $onInit() {

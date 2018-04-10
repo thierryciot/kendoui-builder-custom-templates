@@ -29,10 +29,10 @@ export class <%- classifiedViewName %>BaseComponent implements OnInit, AfterView
 %>
 
     // Define the view title.
-    public title: string = "<%- view.titleX %>";
+    public titleY: string = "<%- view.titleX.replace(/"/g, '\\"'); %>";
 
     // Define the greeting message.
-    public greeting: string = "<%- view.greeting %>";
+    public greeting: string = "<%- view.greeting.replace(/"/g, '\\"'); %>";
 
 <%#
     $config will contain all view configuration properties, including the additional properties
@@ -44,7 +44,7 @@ export class <%- classifiedViewName %>BaseComponent implements OnInit, AfterView
     }
 
     public ngOnInit(): void {
-        // Uncomment the debugger statement to inspect, at tuntime, the properties defined above.
+        // Uncomment the debugger statement to inspect, at runtime, the properties defined above.
         //debugger;
     }
 
