@@ -9,5 +9,9 @@
 
 <div>
     <%# greeting property can contain html so we cannot use interpolation -> {{greeting}} %>
-    <span [innerHTML]="greeting"></span>&nbsp;World V1
+    <span [innerHTML]="greeting"></span>&nbsp;World {{$config.version}}
 </div>
+<br />
+<br />
+Built on {{generatedAt}}
+
