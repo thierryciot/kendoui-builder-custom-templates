@@ -22,7 +22,7 @@
     },
     "events": {
       "type": "object",
-      "title": "Events",
+      "title": "Event",
       "description": "Specifies all available events for the hello world div",
       "order": 3,
       "properties": {
