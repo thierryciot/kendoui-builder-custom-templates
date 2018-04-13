@@ -1,4 +1,4 @@
-Same as V1 but show how to augment model (show Version and generated time)
+In this sample we learn event handling by implementing a click event handler on the salutation container div.
 
 See this blog for more details [TBD]
 
