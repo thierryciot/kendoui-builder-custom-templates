@@ -6,7 +6,7 @@
   "description": "Hello World widget scheme",
   "category": "Views",
   "properties": {
-    "titleX": {
+    "title": {
       "type": "string",
       "title": "View Title",
       "description": "The title of the view shown in the header section",

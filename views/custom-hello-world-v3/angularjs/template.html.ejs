@@ -7,11 +7,21 @@
 
     Note: This is an EJS comment - it won't show in the html output - See http://ejs.co/#docs for details
 %>
-<h2>{{vm.$model.titleY}}</h2>
+<h2>{{vm.$model.title}}</h2>
 
 <div>
     <span ng-bind-html="vm.$model.greeting"></span>&nbsp;World {{vm.$model.version}}
 </div>
-<br />
-<br />
-Built on {{vm.$model.generatedAt}}
+<div style="margin: 1rem; padding: 1rem; border: 2px solid goldenrod;">
+    Properties Added to Model:
+    <ul style="padding-left: 2rem;">
+        <li>
+            <%# This is an example of a property that is defined in options.json.ejs %>
+            Version: {{$config.version}}
+        </li>
+        <li>
+            <%# This is an example of a property that is defined in index.js, function augmentModel %>
+            Template Generated on {{generatedAt}}
+        </li>
+    </ul>
+</div>

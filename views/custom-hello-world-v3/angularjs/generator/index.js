@@ -12,18 +12,13 @@
          * @param {string} metaPath - The path to the folder containing the meta information for the application.
          */
         augmentModel(metaModel, metaPath) {
+            // We augment an existing property
+            metaModel.greeting = '<i style="color: blue;" class="fa fa-globe"></i>&nbsp;' + metaModel.greeting;
+            console.log("Trace: in AngularJS generator: metaModel.greeting: " + metaModel.generatedAt);
+
             // We add an additional property.
             metaModel.generatedAt = new Date().toLocaleDateString("en-US");
-            console.log("Trace: in angular js generator: metaModel.generatedAt: " + metaModel.generatedAt);
-
-            // This is to workaround a bug in kuib V2 where the view label is not included in translation keys
-            //  we are building a unique key like this modules.HelloWorld.views.HWV1.label
-            // provide keys for properties.
-            const keyPrefix = `modules.${ metaModel.moduleName }.views.${ metaModel.name }`;
-            metaModel.labelKey = `${keyPrefix}.label`;
-            metaModel.titleKey = `${keyPrefix}.title`;
-            // This is how we would provide a translation to view properties
-            metaModel.greetingKey = `${keyPrefix}.greeting`;
+            console.log("Trace: in AngularJS generator: metaModel.generatedAt: " + metaModel.generatedAt);
         }
 
         getTranslation(view)
@@ -31,7 +26,7 @@
             // provide default values for properties
             const translation = {
                 label: view.label || view.name,
-                title: view.titleX,
+                title: view.title,
                 greeting: view.greeting
             };
 

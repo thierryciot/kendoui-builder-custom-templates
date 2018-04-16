@@ -6,9 +6,13 @@
 
     module.exports = {
         augmentModel: function(inMemoryMetaModel, metafolderPath) {
-            // Greeting is defined as it comes from meta\modules\myModuleName.json
+            // Greeting is defined in meta\modules\myModuleName.json
+            // We show how we can augment an existing property
             console.log("Trace: in design time generator: inMemoryMetaModel.greeting: " + inMemoryMetaModel.greeting);
-            // version comes from options is not yet defined
+            inMemoryMetaModel.greeting = '<i style="color: blue;" class="fa fa-globe"></i>&nbsp;' + inMemoryMetaModel.greeting;
+            console.log("Trace: in design time generator: augmented inMemoryMetaModel.greeting: " + inMemoryMetaModel.greeting);
+
+            // version comes from options and is not yet defined: we should see undefined at console.
             console.log("Trace: in design time generator: inMemoryMetaModel.version: " + inMemoryMetaModel.version);
 
             // now we add an additional property.
