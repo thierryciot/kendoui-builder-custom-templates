@@ -1,18 +1,20 @@
 <%#
 <script>
-    // cannot do this thing because script is not executed
-    // the template is appended as div to canvas
-    // instead we use options.json.ejs
-    var kuiOptions = { xyz: " greeting  };
+    // We cannot define script (script is not executed as
+    // the template is appended as div to the designer center panel)
+    // Instead we use options.json.ejs
+    var kuiOptions = { "version": "V3" };
 </script>
 %>
+<div style="margin-left: 2rem;">
+
 <h2><%= title %></h2>
 
 <div>
     <div style="font-size: large"><%- greeting %> World</div>
 </div>
 
-<div style="margin: 1rem; padding: 1rem; border: 2px solid goldenrod;">
+<div style="width: 400px; margin: 2rem; padding: 1rem; border: 2px solid goldenrod;">
     Properties Added to Model:
     <ul>
         <li>
@@ -24,5 +26,7 @@
             Template Generated on <%- generatedAt %>
         </li>
     </ul>
+
+</div>
 
 </div>

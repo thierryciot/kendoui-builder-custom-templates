@@ -13,7 +13,7 @@
          */
         augmentModel(metaModel, metaPath) {
             // We augment an existing property
-            metaModel.greeting = '<i style="color: blue;" class="fa fa-globe"></i>&nbsp;' + metaModel.greeting;
+            metaModel.greeting = '<i class="fa fa-globe"></i>&nbsp;' + metaModel.greeting;
             console.log("Trace: in AngularJS generator: metaModel.greeting: " + metaModel.generatedAt);
 
             // We add an additional property.
