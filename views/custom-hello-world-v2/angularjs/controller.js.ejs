@@ -36,7 +36,8 @@ class BaseController {
 <%# Provide a default implementation for onClick event if defined in metadata %>
 <% if (events.onClick) { %>
     <%- events.onClick %>(e) {
-        alert("In default implementation for <%- events.onClick %> - You should override this function in the public controller class.");
+        alert(`In default implementation for <%- events.onClick %>
+                - You should override this function in the public controller class.`);
     }
 <% } %>
 
