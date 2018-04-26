@@ -6,6 +6,7 @@ import { State } from '@progress/kendo-data-query';
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 import { KbGridComponent } from '../../../shared/components/grid/grid.component';
 import { ModelDataResult } from '../../../core/data/model-data-result';
@@ -20,32 +21,26 @@ import { DataServiceFactory } from '../../../core/data/data-service-factory';
 })
 export class <%- classifiedViewName %>ViewBaseComponent implements OnInit, AfterViewInit, OnDestroy {
 
-    <%- include('./data-services/data-properties-definitions.ts.ejs', { viewDataSources: view.viewDataSources }); -%>
+    public title: string = '<%- view.title %>';
+
+    // Array where we will store the data coming back from server.
+    public myRestList: Array<any> = [];
+
+    // List of fields generated from metadata, if you want to use with ngFor
+    public myRestFields = [
+        <% view.myDataSrcFields.forEach(item => { %>
+            '<%- item.label %>',
+        <% })%>
+    ];
+
+
+<%- include('./data-services/data-properties-definitions.ts.ejs', { viewDataSources: view.viewDataSources }); -%>
 
     public $config: any = <%- viewConfig %>;
-
-    // Here we need to create the properties we will access from the template
-    // We access metadata properties from the view object
-    public title: string = "<%- view.title %>";
-
-    // Define some sample data
-    public myList = [ { 'id': 1, 'name': 'test 1 (sample data from base.component.ts.ejs)' }
-                    , { 'id': 2, 'name': 'test 2' }
-                    ];
-
-    // This one is defined from the augmented metadata model from index.js
-    public myList4 = <%- pretty(view.myList4, undefined, undefined, true) %>;
 
     // For accessing real data from REST service:
     // Option 1: do everything by hand using Angular Http client service => need to create the url , ect... and then use Angular component/view binding (like tutorial)
     // Option 2: to use our data service.
-
-    // List of fields generated from metadata
-    public myRestFields = [
-        <% view.myDataSrcFields.forEach(item => { %>
-            "<%- item.label %>",
-        <% })%>
-    ];
 
     constructor(public injector: Injector) {
         <%- include('./data-services/data-properties-initialization.ts.ejs', { viewDataSources: view.viewDataSources }); -%>
@@ -53,8 +48,6 @@ export class <%- classifiedViewName %>ViewBaseComponent implements OnInit, After
 
     // we could include these but we just need one function that reads the data and not the 3 separate functions
     <%- include('./data-services/data-functions.ts.ejs'); -%>
-
-    public myRestList: Array<any> = [];
 
     public ngOnInit(): void {
         <%# We get data source name from metadata -> the name selected in property %>
@@ -67,6 +60,7 @@ export class <%- classifiedViewName %>ViewBaseComponent implements OnInit, After
                 debugger;
                 return response ? response.data : [];
             }).subscribe(data => this.myRestList = data);
+
 
         <%# use the KUIB builtin data service %>
 /*        const results: Observable<any> = dataService.dataChanges()
