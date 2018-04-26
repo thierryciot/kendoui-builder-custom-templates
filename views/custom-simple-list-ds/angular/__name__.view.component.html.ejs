@@ -8,26 +8,25 @@
 <h2>{{title}}</h2>
 
 <div style="margin-bottom: 1.5rem;">
-    <%# Output list of fields from rest service %>
-    <% view.myDataSrcFields.forEach(item => { %>
-        <span>
-            Field: label: <%- item.label %> name: <%- item.name %>
-        </span>&nbsp;
-    <% })%>
-
-    <br/>
-    <br/>
-    Simple list from REST service call
-    <ul style="margin: 1rem;">
-        <li *ngFor="let item of myRestList">
-            <!--<span *ngFor="field of myRestFields">-->
-                <!--{{field}}: {{item[field]}}-->
-            <!--</span>&nbsp;-->
+    <table>
+        <tr style="background-color: #3fd5d5; font-weight: bold; ">
             <% view.myDataSrcFields.forEach(field => { %>
-                <span>
-                    <%- field.label %>: {{item['<%- field.name %>']}}
-                </span>&nbsp;
+            <td style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+                <!-- <%- field.name %> -->
+                <span style="margin-left: 0.8rem; margin-right: 0.8rem;">
+                    <%- field.label %>
+                </span>
+            </td>
             <% })%>
-        </li>
-    </ul>
+        </tr>
+        <tr *ngFor="let item of myRestList" style="background-color: #ddd;">
+            <% view.myDataSrcFields.forEach(field => { %>
+            <td align="right">
+                <span style="margin-right: 0.8rem;">
+                    {{item['<%- field.name %>']}}
+                </span>
+            </td>
+            <% })%>
+        </tr>
+    </table>
 </div>
