@@ -14,7 +14,7 @@
         augmentModel(metaModel, metaPath) {
             // We augment an existing property
             metaModel.greeting = '<i class="fa fa-globe"></i>&nbsp;' + metaModel.greeting;
-            console.log("Trace: in AngularJS generator: metaModel.greeting: " + metaModel.generatedAt);
+            console.log("Trace: in AngularJS generator: metaModel.greeting: " + metaModel.greeting);
 
             // We add an additional property.
             metaModel.generatedAt = new Date().toLocaleDateString("en-US");
