@@ -19,6 +19,13 @@
       "description": "The string prepended to world",
       "default": "Salutations",
       "order": 2
+    },
+    "html": {
+      "type": "string",
+      "title": "Html",
+      "description": "Some Html string",
+      "editorType": "codeEditor",
+      "order": 3
     }
   },
   "required": [
