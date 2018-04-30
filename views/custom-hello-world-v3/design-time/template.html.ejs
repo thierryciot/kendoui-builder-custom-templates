@@ -29,5 +29,9 @@
     </div>
 
     <h3>Html Property from Html Editor</h3>
-    <%- html %>
+    <% if ( html ) { %>
+        <%- html %>
+    <% } else { %>
+        No html entered
+    <% } %>
 </div>

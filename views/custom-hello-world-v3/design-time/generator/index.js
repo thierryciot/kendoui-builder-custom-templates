@@ -19,6 +19,15 @@
             // inMemoryMetaModel.generatedAt = new Date(2018, 3, 27).toLocaleDateString("en-US");
             inMemoryMetaModel.generatedAt = new Date().toLocaleDateString("en-US");
             console.log("Trace: in design time generator: inMemoryMetaModel.generatedAt: " + inMemoryMetaModel.generatedAt);
+
+            // Ensure html property is always defined to simplify template (when first defining the view
+            // the html property will be undefined) - when we add and then delete all content from html editor
+            // then the property will be empty.
+            console.log("Trace: in design time generator: inMemoryMetaModel.html: " + inMemoryMetaModel.html);
+            if ( inMemoryMetaModel.html === undefined )
+                inMemoryMetaModel.html = "";
+
+            console.log("Trace: in design time generator: inMemoryMetaModel.html: " + inMemoryMetaModel.html);
         }
     };
 })(module);
