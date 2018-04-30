@@ -25,3 +25,8 @@
         </li>
     </ul>
 </div>
+
+<h3>Html Property from Html Editor</h3>
+
+<!-- If using html that is no removed by the sanitation need to work around as documented here https://docs.angularjs.org/api/ng/service/$sce#show-me-an-example-using-sce--->
+<section ng-bind-html="vm.$model.html"></section>
