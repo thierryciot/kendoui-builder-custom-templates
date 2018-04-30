@@ -37,6 +37,9 @@ export class <%- classifiedViewName %>ViewBaseComponent implements OnInit, After
     // Define the generated at field.
     public generatedAt: string = "<%- view.generatedAt %>";
 
+    // Define the html fragment (from Html Editor) - we need to replace multi-line strings into a single line string
+    public html: string = "<%- view.html.replace(/"/g, '\\"').replace(/\r?\n|\r/gm, " ") %>";
+
 <%#
     $config will contain all view configuration properties, including the additional properties
     defined in config.json.ejs.
