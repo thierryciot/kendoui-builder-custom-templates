@@ -1,4 +1,7 @@
 <%#
+Here the key thing is component is declared with valuePrimitive=false (in component definition file)
+As consequence the entire model is available to component (model is defined at view level)
+
 TODO: Add a check for metric fields are defined - if not say data source cannot be used with this component
 it should have temp, hum, ect...
 %>
@@ -16,4 +19,6 @@ it should have temp, hum, ect...
        <li>CO2: {{$dataModels.<%- model %>.co2}}</li>
        <li>VOC: {{$dataModels.<%- model %>.voc}}</li>
     </ul>
+    <br/>
+    Debug output - model defined as: <%- model %>
 </div>

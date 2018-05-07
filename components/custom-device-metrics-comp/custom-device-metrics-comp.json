@@ -28,6 +28,12 @@
       "default": "A Metric",
       "order": 2
     },
+    "valuePrimitive": {
+      "type": "boolean",
+      "default": true,
+      "hidden": true,
+      "order": 3
+    },
     "model": {
       "type": "string",
       "title": "Model",
