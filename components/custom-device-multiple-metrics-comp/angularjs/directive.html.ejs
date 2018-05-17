@@ -2,6 +2,8 @@
 Here the key thing is component is declared with valuePrimitive=false (in component definition file)
 As consequence the entire model is available to component (model is defined at view level)
 
+TODO: See how to access the field labels and use that?
+
 TODO: Add a check for metric fields are defined - if not say data source cannot be used with this component
 it should have temp, hum, ect...
 %>
@@ -11,12 +13,11 @@ it should have temp, hum, ect...
         <%#
         $viewModels is defined at the view level - see generated code in app\src\modules\custom-components\room-metrics\controller.js
         %>
-        <li>Current Temperature: {{vm.$viewModels.<%-model%>.currentTemp}}</li>
-        <li>Set Temperature: {{vm.$viewModels.<%-model%>.setTemp}}</li>
-        <li>Humidity: {{vm.$viewModels.<%-model%>.hum}}</li>
-        <li>CO2: {{vm.$viewModels.<%-model%>.co2}}</li>
-        <li>VOC: {{vm.$viewModels.<%-model%>.voc}}</li>
+        <li style="margin-top: 0.6rem;">Current Temperature: {{vm.$viewModels.<%-model%>.currentTemp}}</li>
+        <li style="margin-top: 0.6rem;">Set Temperature: {{vm.$viewModels.<%-model%>.setTemp}}</li>
+        <li style="margin-top: 0.6rem;">Humidity: {{vm.$viewModels.<%-model%>.hum}}</li>
+        <li style="margin-top: 0.6rem;">CO2: {{vm.$viewModels.<%-model%>.co2}}</li>
+        <li style="margin-top: 0.6rem;">VOC: {{vm.$viewModels.<%-model%>.voc}}</li>
     </ul>
-    <br/>
-    Debug output - model defined as: <%- model %>
+    <!--Debug output - model defined as: <%- model %>-->
 </div>

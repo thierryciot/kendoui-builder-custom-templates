@@ -5,20 +5,23 @@ As consequence the entire model is available to component (model is defined at v
 TODO: Add a check for metric fields are defined - if not say data source cannot be used with this component
 it should have temp, hum, ect...
 %>
-<div>
+<% if ( model === "" ) { %>
+    <div>Please select a model to use this component.</div>
+<% } else { %>
+<div style="margin-top: 1rem;">
     {{$config.components.<%-id%>.metric}}:
-    <ul style="padding-left: 1.5rem;">
+    <ul style="margin-top: 0.8rem; padding-left: 1.5rem;">
         <%#
         $dataModels is defined at the view level - see generated code in
         app\src\app\modules\custom-components\drop-down-to-custom-comp\drop-down-to-custom-comp.base.component.ts
         Also see app\src\app\data\io-t\device.model.ts for which fields are available
         %>
-       <li>Current Temperature: {{$dataModels.<%- model %>.currentTemp}}</li>
-       <li>Set Temperature: {{$dataModels.<%- model %>.setTemp}}</li>
-       <li>Humidity: {{$dataModels.<%- model %>.hum}}</li>
-       <li>CO2: {{$dataModels.<%- model %>.co2}}</li>
-       <li>VOC: {{$dataModels.<%- model %>.voc}}</li>
+       <li style="margin-top: 0.6rem;">Current Temperature: {{$dataModels.<%- model %>.currentTemp}}</li>
+       <li style="margin-top: 0.6rem;">Set Temperature: {{$dataModels.<%- model %>.setTemp}}</li>
+       <li style="margin-top: 0.6rem;">Humidity: {{$dataModels.<%- model %>.hum}}</li>
+       <li style="margin-top: 0.6rem;">CO2: {{$dataModels.<%- model %>.co2}}</li>
+       <li style="margin-top: 0.6rem;">VOC: {{$dataModels.<%- model %>.voc}}</li>
     </ul>
-    <br/>
-    Debug output - model defined as: <%- model %>
+    <!--Debug output - model defined as: <%- model %>-->
 </div>
+<% } %>
