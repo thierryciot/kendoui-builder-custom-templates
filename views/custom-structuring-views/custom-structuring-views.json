@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "custom-structuring-views",
+  "type": "object",
+  "name": "custom-structuring-views",
+  "description": "How to structure views with EJS includes",
+  "category": "Views",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "View Title",
+      "description": "The title of the view shown in the header section",
+      "default": "Hello",
+      "order": 1
+    },
+    "string1": {
+      "type": "string",
+      "title": "string1",
+      "description": "",
+      "default": "string1",
+      "order": 2
+    },
+    "string2": {
+      "type": "string",
+      "title": "string2",
+      "description": "",
+      "default": "string2",
+      "order": 3
+    }
+  },
+  "required": [
+  ],
+  "dependencies": {
+    "dataSource": [
+      "dataProvider"
+    ]
+  }
+}
