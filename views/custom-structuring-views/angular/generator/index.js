@@ -9,8 +9,7 @@
             // provide default values for properties
             const translation = {
                 label: view.label || view.name,
-                title: view.titleX,
-                greeting: view.greeting
+                title: view.title
             };
 
             return translation;
