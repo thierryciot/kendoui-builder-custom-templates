@@ -1,0 +1,105 @@
+<style>
+    .cardContainer {
+        width: 80%;
+        max-width: 1240px;
+        /*margin: 0 auto;*/
+        margin-left: 5%;
+        margin-right: 5%;
+        display: grid;
+
+        grid-template-rows: auto; /* row heights will be determined purely by the content */
+        grid-gap: 20px; /* column and row gutters. */
+    }
+
+    @media only screen and (max-width: 768px) {
+        .cardContainer {
+            grid-template-columns: 100%;
+        }
+    }
+
+    /* On wider viewports, two cards per row. (2 columns of same width)*/
+    @media only screen and (min-width: 769px) and (max-width: 1023px) {
+        .cardContainer {
+            grid-template-columns: 50% 50%;
+        }
+    }
+
+    /* for larger screens we’ll go with a four column layout. */
+    @media only screen and (min-width: 1024px) {
+        .cardContainer {
+            /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+            grid-template-columns: 25% 25% 25% 25% ;
+        }
+    }
+
+    .card {
+        background: white;
+        text-decoration: none;
+        border: solid 2px black;
+        color: #444;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        height: 200px;
+        min-height: 100%;
+    }
+</style>
+<div class="cardContainer">
+    <!-- grid item, containing a card -->
+    <a href="" class="card">
+        <div class="thumb"></div>
+        <article>
+            <h1>Post title</h1>
+            <span>Author</span>
+        </article>
+    </a>
+    <a href="" class="card">
+        <div class="thumb"></div>
+        <article>
+            <h1>Post title</h1>
+            <span>Author</span>
+        </article>
+    </a>
+    <a href="" class="card">
+        <div class="thumb"></div>
+        <article>
+            <h1>Post title</h1>
+            <span>Author</span>
+        </article>
+    </a>
+    <a href="" class="card">
+        <div class="thumb"></div>
+        <article>
+            <h1>Post title</h1>
+            <span>Author</span>
+        </article>
+    </a>
+    <a href="" class="card">
+        <div class="thumb"></div>
+        <article>
+            <h1>Post title</h1>
+            <span>Author</span>
+        </article>
+    </a>
+    <a href="" class="card">
+        <div class="thumb"></div>
+        <article>
+            <h1>Post title</h1>
+            <span>Author</span>
+        </article>
+    </a>
+    <a href="" class="card">
+        <div class="thumb"></div>
+        <article>
+            <h1>Post title</h1>
+            <span>Author</span>
+        </article>
+    </a>
+    <a href="" class="card">
+        <div class="thumb"></div>
+        <article>
+            <h1>Post title</h1>
+            <span>Author</span>
+        </article>
+    </a>
+</div>

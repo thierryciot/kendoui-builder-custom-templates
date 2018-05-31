@@ -1,0 +1,30 @@
+<%#
+<p>
+   To get this sample working you need to do the following:
+   <ul>
+   <li>
+      Put the angular component somewhere in the target application, for example create
+      customcomp directory under \app\src\app\shared and copy the source code there.
+   </li>
+   <li>add the following code to app\src\app\shared\shared.module.ts
+   <code>
+      import { MultiSelectComponent } from './customcomp/multi-select.component/multi-select.component';
+      config.exports.push(MultiSelectComponent);
+      config.declarations.push(MultiSelectComponent);
+      //const myDeclarationsArray = <any[]>config.declarations;
+      //myDeclarationsArray.push(HelloWorldComponent);
+    </code>
+%>
+<div style="margin: 1rem; border: 1px black solid;">
+    Debug - custom-multi-select component (template.html.ejs):<br/>
+    Title: {{$config.components.<%-id%>.title}}<br/>
+    dataSourceName: {{$config.components.<%-id%>.dataSourceName}}<br/>
+    data: {{getDataResult($config.components.<%-id%>.dataSourceName) | async | json}}<br/>
+    data: {{$dataServicesData | async | json}}<br/>
+</div>
+
+<custom-multi-select
+    title="{{$config.components.<%-id%>.title}}"
+    dataSourceName="{{$config.components.<%-id%>.dataSourceName}}"
+>
+</custom-multi-select>

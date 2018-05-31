@@ -3,7 +3,7 @@ this.$<%- viewDataSource.camelCasedServiceFactory %> = this.injector.get(<%- vie
 <%_ }); -%>
         this.$dataServices = {
             <%_ Object.keys(viewDataSources).forEach((key, index, arr) => { -%>
-            '<%- key %>': this.$<%- viewDataSources[key].camelCasedServiceFactory %>.getService<<%- viewDataSources[key].classifiedProviderName %><%- viewDataSources[key].classifiedDSName %>>(<%- viewDataSources[key].classifiedDSName %>Config, this.$dataServicesState['<%- key %>'])<% if (index !== arr.length - 1) { %>,<% } %>
+            '<%- key %>': this.$<%- viewDataSources[key].camelCasedServiceFactory %>.getService<<%- viewDataSources[key].classifiedProviderName %><%- viewDataSources[key].classifiedDSName %>>(get<%- viewDataSources[key].classifiedDSName %>Config(), this.$dataServicesState['<%- key %>'])<% if (index !== arr.length - 1) { %>,<% } %>
             <%_ }); -%>
         };
         this.$dataServicesData = {

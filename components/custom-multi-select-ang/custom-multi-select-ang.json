@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "custom-multi-select-ang",
+  "name": "custom-multi-select-ang",
+  "description": "Multi-select component wrapping Kendo UI Angular component",
+  "type": "object",
+  "category": "Custom",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "../definitions/valid-component-id.json"
+        },
+        {
+          "type": "string",
+          "title": "Id",
+          "description": "The Id of the component",
+          "default": "",
+          "minLength": 1
+        }
+      ],
+      "order": 1
+    },
+    "dataSourceName": {
+      "type": "string",
+      "title": "Data Source Name",
+      "description": "The name of the data source to which the combobox will be bound",
+      "default": "",
+      "editorType": "componentDataSource",
+      "hiddenInComplexViews": true,
+      "order": 2
+    },
+    "model": {
+      "type": "string",
+      "title": "Model",
+      "default": "",
+      "editorType": "modelName",
+      "hiddenInComplexViews": true,
+      "order": 3
+    },
+    "textField": {
+      "type": "string",
+      "title": "Data Text Field",
+      "description": "Sets the data item field that represents the item text.",
+      "default": "",
+      "editorType": "fieldsList",
+      "hiddenInComplexViews": true,
+      "order": 4
+    },
+    "valueField": {
+      "type": "string",
+      "title": "Data Value Field",
+      "description": "Sets the data item field that represents the item value.",
+      "default": "",
+      "editorType": "fieldsList",
+      "hiddenInComplexViews": true,
+      "order": 5
+    },
+    "title": {
+      "type": "string",
+      "title": "Title Text",
+      "default": "",
+      "order": 6
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

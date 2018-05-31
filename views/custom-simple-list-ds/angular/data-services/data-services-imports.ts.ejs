@@ -5,5 +5,5 @@ import { <%- viewDataSource.classifiedServiceFactory %> } from '../../../core/da
 import { <%- viewDataSource.classifiedProviderName %><%- viewDataSource.classifiedDSName %> } from '../../../data/<%- viewDataSource.dasherizedProviderName %>/<%- viewDataSource.dasherizedDSName %>.model';
 <%_ }); -%>
 <%_ _.forEach(_.uniq(_.values(viewDataSources), item => item.classifiedDSName), viewDataSource => { -%>
-import { <%- viewDataSource.classifiedDSName %>Config } from '../../../data/<%- viewDataSource.dasherizedProviderName %>/<%- viewDataSource.dasherizedDSName %>.config';
+import { get<%- viewDataSource.classifiedDSName %>Config } from '../../../data/<%- viewDataSource.dasherizedProviderName %>/<%- viewDataSource.dasherizedDSName %>.config';
 <%_ }); -%>
