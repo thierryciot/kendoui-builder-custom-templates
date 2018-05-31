@@ -19,12 +19,14 @@
     Debug - custom-multi-select component (template.html.ejs):<br/>
     Title: {{$config.components.<%-id%>.title}}<br/>
     dataSourceName: {{$config.components.<%-id%>.dataSourceName}}<br/>
-    data: {{getDataResult($config.components.<%-id%>.dataSourceName) | async | json}}<br/>
-    data: {{$dataServicesData | async | json}}<br/>
+    data from $dataServicesData: {{$dataServicesData[$config.components.<%-id%>.dataSourceName] | async | json}}<br/>
 </div>
 
 <custom-multi-select
     title="{{$config.components.<%-id%>.title}}"
     dataSourceName="{{$config.components.<%-id%>.dataSourceName}}"
+    [dataSourceData]='$dataServicesData[$config.components.<%-id%>.dataSourceName]'
+    textField="<%-textField%>"
+    valueField="<%-valueField%>"
 >
 </custom-multi-select>

@@ -11,14 +11,16 @@
         <!--(valueChange)="changeHandler($event)"-->
         <!--(selectionChange)="selectionHandler($event)"-->
         <!--(filterChange)="filterHandler($event)">-->
+<!--[(ngModel)]="selectedData"-->
 <!--</kendo-combobox>-->
 
 <kendo-multiselect [data]="multiSelectData"
                    [title]="title"
+                   [textField]="textField"
+                   [valueField]="valueField"
                    [filterable]="true"
                    (filterChange)="multiSelectFilterChange($event)"
                    (valueChange)="multiSelectValueChange($event)"
-                   [(ngModel)]="selectedData"
 >
 </kendo-multiselect>
 
@@ -26,4 +28,6 @@
     Debug - multi-select.component.html:<br/>
     Title: {{title}}<br/>
     dataSourceName: {{dataSourceName}}<br/>
+    dataSourceName: {{textField}}<br/>
+    dataSourceName: {{valueField}}<br/>
 </div>
