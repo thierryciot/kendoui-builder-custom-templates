@@ -1,0 +1,17 @@
+<!--
+       [class]="icon"
+       <span class="kbc-rating-container">
+    <i [ngStyle]="{'color': color, 'margin-right': spacing, 'font-size': height }"
+       [ngClass]="[icon, 'kbc-rating-item']"
+       *ngFor="let x of loopCounter">
+    </i>
+</span>
+-->
+<span *ngIf="debugComp">Rating parameters: {{rating}} {{icon}} {{color}} {{spacing}} {{height}}</span>
+<span>
+    <i [ngStyle]="{'color': color, 'margin-right': spacing, 'font-size': height }"
+       [class]="icon"
+       *ngFor="let x of loopCounter">
+    </i>
+</span>
+
