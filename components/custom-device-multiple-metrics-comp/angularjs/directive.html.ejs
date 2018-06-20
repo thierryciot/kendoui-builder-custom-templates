@@ -1,11 +1,6 @@
 <%#
 Here the key thing is component is declared with valuePrimitive=false (in component definition file)
 As consequence the entire model is available to component (model is defined at view level)
-
-TODO: See how to access the field labels and use that?
-
-TODO: Add a check for metric fields are defined - if not say data source cannot be used with this component
-it should have temp, hum, ect...
 %>
 <div>
     {{vm.$components.<%-id%>.metric}}:
@@ -19,5 +14,4 @@ it should have temp, hum, ect...
         <li style="margin-top: 0.6rem;">CO2: {{vm.$viewModels.<%-model%>.co2}}</li>
         <li style="margin-top: 0.6rem;">VOC: {{vm.$viewModels.<%-model%>.voc}}</li>
     </ul>
-    <!--Debug output - model defined as: <%- model %>-->
 </div>
