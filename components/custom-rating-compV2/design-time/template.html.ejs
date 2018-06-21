@@ -1,4 +1,4 @@
-<div>
+<div style="width: 100%;margin-top: <%-marginTop%>px; margin-bottom: <%-marginBottom%>px; text-align: <%-alignment%>; ">
 <%
 var ratingValue;
 if ( fixedValue ) {
@@ -14,6 +14,6 @@ else {
 %>
 
 <% for (i=0; i<ratingValue; i++) { %>
-    <i style="margin-right: <%- spacing %>px; color: <%- color %>; font-size: <%- height %>px" class="<%- icon %>"></i>
+    <i style="margin-right: <%- spacing %>px; color: <%- color %>; font-size: <%- height %>px;" class="<%- icon %>"></i>
 <% } %>
 </div>

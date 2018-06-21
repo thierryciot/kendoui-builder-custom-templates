@@ -63,7 +63,7 @@
     "value": {
       "type": "integer",
       "title": "Value",
-      "minimum": 1,
+      "minimum": 0,
       "maximum": 6,
       "description": "Number of times we repeat the icon",
       "default": 3,
@@ -81,6 +81,31 @@
       "default": "",
       "editorType": "modelName",
       "order": 9
+    },
+    "alignment": {
+      "type": "string",
+      "title": "Text Alignment",
+      "default": "Start",
+      "enum": [
+        "Start",
+        "Center",
+        "End"
+      ],
+      "order": 10
+    },
+    "marginTop": {
+      "type": "integer",
+      "title": "Margin Top (px)",
+      "minimum": 0,
+      "default": 3,
+      "order": 11
+    },
+    "marginBottom": {
+      "type": "integer",
+      "title": "Margin Bottom (px)",
+      "minimum": 0,
+      "default": 3,
+      "order": 12
     }
   },
   "required": [

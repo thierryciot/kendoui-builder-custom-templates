@@ -16,6 +16,9 @@ export class RatingComponentV2 implements OnInit {
   @Input() height: string;
   @Input() icon: string;
   @Input() color: string;
+  @Input() marginBottom: string;
+  @Input() marginTop: string;
+  @Input() alignment: string;
 
   // Set it to true to output debug data in the component itself.
   debugComp = false;
@@ -42,6 +45,8 @@ export class RatingComponentV2 implements OnInit {
 
     this.spacing += 'px';
     this.height += 'px';
+    this.marginTop += 'px';
+    this.marginBottom += 'px';
   }
 
   // Need to recompute the size of the array when the data changes.

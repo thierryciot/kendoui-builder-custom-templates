@@ -7,8 +7,8 @@
     </i>
 </span>
 -->
-<span *ngIf="debugComp">RatingV2 parameters: {{rating}} {{icon}} {{color}} {{spacing}} {{height}}</span>
-<div class="kbc-rating-container" [ngStyle]="{'color': color, 'font-size': height }">
+<span *ngIf="debugComp">RatingV2 parameters: {{rating}} {{icon}} {{color}} {{spacing}} {{height}} {{alignment}} {{marginTop}} {{marginBottom}}</span>
+<div class="kbc-rating-container" [ngStyle]="{'color': color, 'font-size': height, 'text-align': alignment, 'margin-bottom': marginBottom, 'margin-top': marginTop }">
     <i [ngStyle]="{'margin-right': spacing}"
        [class]="icon"
        *ngFor="let x of loopCounter">
