@@ -1,0 +1,22 @@
+<%#
+<p>
+   To get this sample working you need to do the following:
+   <ul>
+   <li>
+      Put the angular component somewhere in the target application, for example create
+      customcomp directory under \app\src\app\shared and copy the source code there.
+   </li>
+   <li>add the following code to app\src\app\shared\shared.module.ts
+   <code>
+      import { OpenLayerMap } from './customcomp/openLayerMap.component/openLayerMap.component';
+      config.exports.push(OpenLayerMap);
+      config.declarations.push(OpenLayerMap);
+   </code>
+%>
+<custom-olmap
+        [lon]="$dataModels.<%- model %>.lon"
+        [lat]="$dataModels.<%- model %>.lat"
+        componentId="<%-id%>Map"
+>
+</custom-olmap>
+

@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "custom-olmap-comp",
+  "name": "custom-olmap-comp",
+  "description": "custom map component",
+  "type": "object",
+  "category": "Custom",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "../definitions/valid-component-id.json"
+        },
+        {
+          "type": "string",
+          "title": "Id",
+          "description": "The Id of the component",
+          "default": "",
+          "minLength": 1
+        }
+      ],
+      "order": 1
+    },
+    "valuePrimitive": {
+      "type": "boolean",
+      "default": false,
+      "hidden": true,
+      "order": 1
+    },
+    "dataSourceName": {
+      "type": "string",
+      "default": "",
+      "hidden": true,
+      "order": 2
+    },
+    "model": {
+      "type": "string",
+      "title": "Model",
+      "default": "",
+      "editorType": "modelName",
+      "order": 3
+    }
+  },
+  "required": [
+    "id"
+  ]
+}
