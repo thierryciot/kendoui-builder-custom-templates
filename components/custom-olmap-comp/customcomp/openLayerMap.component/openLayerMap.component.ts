@@ -1,4 +1,6 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, OnChanges, ViewChild} from '@angular/core';
+
+declare var ol: any;
 
 /*
 It assumes the OL CSS and JS are already included in application:
@@ -13,7 +15,7 @@ See http://openlayers.org/en/latest/doc/quickstart.html
     templateUrl: './openLayerMap.component.html',
     styleUrls: ['./openLayerMap.component.css']
 })
-export class OpenLayerMap implements OnInit {
+export class OpenLayerMap implements OnInit, OnChanges {
     @Input() lon: number;
     @Input() lat: number;
     @Input() componentId: string;
