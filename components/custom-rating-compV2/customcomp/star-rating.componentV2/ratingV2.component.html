@@ -7,11 +7,15 @@
     </i>
 </span>
 -->
-<span *ngIf="debugComp">RatingV2 parameters: {{rating}} {{icon}} {{color}} {{spacing}} {{height}} {{alignment}} {{marginTop}} {{marginBottom}}</span>
-<div class="kbc-rating-container" [ngStyle]="{'color': color, 'font-size': height, 'text-align': alignment, 'margin-bottom': marginBottom, 'margin-top': marginTop }">
-    <i [ngStyle]="{'margin-right': spacing}"
+<span *ngIf="debugComp">RatingV2 parameters: {{rating}} {{icon}} {{color}} {{spacing}} {{height}} {{alignment}} {{marginTop}} {{marginBottom}} {{showRange}}</span>
+<div class="kbc-rating-container" [ngStyle]="{'font-size': height, 'text-align': alignment, 'margin-bottom': marginBottom, 'margin-top': marginTop }">
+    <i [ngStyle]="{'color': color, 'margin-right': spacing}"
        [class]="icon"
        *ngFor="let x of loopCounter">
+    </i>
+	<i [ngStyle]="{'color': 'lightgrey', 'margin-right': spacing}"
+       [class]="icon"
+       *ngFor="let y of remainingLoopCounter">
     </i>
 </div>
 

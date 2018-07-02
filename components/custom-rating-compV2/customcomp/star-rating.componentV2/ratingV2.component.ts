@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 /*
-We will use font awesome to render rating icon.
+We use font awesome to render rating icon.
 
 See https://stackoverflow.com/questions/38796541/how-to-add-font-awesome-to-angular-2-cli-project
  */
@@ -20,14 +20,26 @@ export class RatingComponentV2 implements OnInit {
   @Input() marginTop: string;
   @Input() alignment: string;
 
+  // Angular doesn't know about boolean attributes.  See:
+  // https://stackoverflow.com/questions/41856883/angular2-boolean-input-property-getting-set-as-string-binding-nested-properti
+  @Input() showRange: string;
+  set showRange (value: string) {
+     // debugger;
+     this.isShowingRange = value != 'false';
+  }
+  isShowingRange: Boolean;
+
+  //iconRangeColor = 'lightgrey';
+
   // Set it to true to output debug data in the component itself.
-  debugComp = false;
+  debugComp = true;
 
   constructor() { }
 
   // ngFor only works on iteratable (does not accept a simple number) so we need to create
-  // a dummy array of a specific length.
+  // dummy arrays of a specific length for the rating icons and the range icons.
   loopCounter: Array<number>;
+  remainingLoopCounter: Array<number>;
 
   static createEmptyArrayWithSpecificLengthForNgFor(length): Array<number> {
     return new Array<number>(length);
@@ -52,17 +64,31 @@ export class RatingComponentV2 implements OnInit {
   // Need to recompute the size of the array when the data changes.
   ngOnChanges() {
       console.log( `RatingComponentV2: rating value: ${this.rating}` );
-      let x;
+      let ratingCount;
       if ( this.rating !== undefined ) {
-          x = Number(this.rating);
-          if ( isNaN(x)) {
-              x = 0;
+          ratingCount = Number(this.rating);
+          if ( isNaN(ratingCount)) {
+              ratingCount = 0;
           }
       }
       else {  // no data is selected in combo-box so model is not initialized with any data
-        x = 0;
+        ratingCount = 0;
       }
 
-      this.loopCounter = RatingComponentV2.createEmptyArrayWithSpecificLengthForNgFor(x);
+      if ( ratingCount > 5 ) {
+          ratingCount = 5;
+      }
+
+      this.loopCounter = RatingComponentV2.createEmptyArrayWithSpecificLengthForNgFor(ratingCount);
+
+      // For showing the range
+      let remaining;
+      if ( this.showRange ) {
+          remaining = 5 - ratingCount;
+      }
+      else {
+          remaining = 0;
+      }
+      this.remainingLoopCounter = RatingComponentV2.createEmptyArrayWithSpecificLengthForNgFor(remaining);
   }
 }
