@@ -25,14 +25,46 @@
       "type": "boolean",
       "default": true,
       "hidden": true,
-      "order": 3
+      "order": 2
     },
     "model": {
       "type": "string",
       "title": "Model",
       "default": "",
       "editorType": "modelName",
+      "order": 3
+    },
+    "alignment": {
+      "type": "string",
+      "title": "Text Alignment",
+      "default": "Start",
+      "enum": [
+        "Start",
+        "Center",
+        "End"
+      ],
       "order": 4
+    },
+    "fontSize": {
+      "type": "integer",
+      "title": "Font Size (px)",
+      "minimum": 7,
+      "default": 12,
+      "order": 5
+    },
+    "marginTop": {
+      "type": "integer",
+      "title": "Margin Top (px)",
+      "minimum": 0,
+      "default": 3,
+      "order": 6
+    },
+    "marginBottom": {
+      "type": "integer",
+      "title": "Margin Bottom (px)",
+      "minimum": 0,
+      "default": 3,
+      "order": 6
     }
   },
   "required": [
