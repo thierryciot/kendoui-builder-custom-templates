@@ -32,7 +32,7 @@ export class RatingComponentV2 implements OnInit {
   //iconRangeColor = 'lightgrey';
 
   // Set it to true to output debug data in the component itself.
-  debugComp = true;
+  debugComp = false;
 
   constructor() { }
 
