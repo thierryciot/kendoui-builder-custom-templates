@@ -63,7 +63,8 @@ export class RatingComponentV2 implements OnInit {
 
   // Need to recompute the size of the array when the data changes.
   ngOnChanges() {
-      console.log( `RatingComponentV2: rating value: ${this.rating}` );
+      if ( this.debugComp ) { console.log( `RatingComponentV2: rating value: ${this.rating}` ); }
+
       let ratingCount;
       if ( this.rating !== undefined ) {
           ratingCount = Number(this.rating);
@@ -83,12 +84,14 @@ export class RatingComponentV2 implements OnInit {
 
       // For showing the range
       let remaining;
-      if ( this.showRange ) {
+      if ( this.isShowingRange ) {
           remaining = 5 - ratingCount;
       }
       else {
           remaining = 0;
       }
       this.remainingLoopCounter = RatingComponentV2.createEmptyArrayWithSpecificLengthForNgFor(remaining);
+
+      if ( this.debugComp ) { console.log(`loopCount1: $loopCount1, loopCount2: $loopCount1, remaining: $remaining`); }
   }
 }

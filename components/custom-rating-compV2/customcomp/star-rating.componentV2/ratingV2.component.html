@@ -1,19 +1,9 @@
-<!--
-       [class]="icon"
-       <span class="kbc-rating-container">
-    <i [ngStyle]="{'color': color, 'margin-right': spacing, 'font-size': height }"
-       [ngClass]="[icon, 'kbc-rating-item']"
-       *ngFor="let x of loopCounter">
-    </i>
-</span>
--->
-<span *ngIf="debugComp">RatingV2 parameters: {{rating}} {{icon}} {{color}} {{spacing}} {{height}} {{alignment}} {{marginTop}} {{marginBottom}} {{showRange}}</span>
+<span *ngIf="debugComp">RatingV2 parameters: {{rating}} {{icon}} {{color}} {{spacing}} {{height}} {{alignment}} {{marginTop}} {{marginBottom}} {{isShowingRange}}</span>
 <div class="kbc-rating-container" [ngStyle]="{'font-size': height, 'text-align': alignment, 'margin-bottom': marginBottom, 'margin-top': marginTop }">
     <i [ngStyle]="{'color': color, 'margin-right': spacing}"
        [class]="icon"
        *ngFor="let x of loopCounter">
-    </i>
-	<i [ngStyle]="{'color': 'lightgrey', 'margin-right': spacing}"
+    </i><i [ngStyle]="{'color': 'lightgrey', 'margin-right': spacing}"
        [class]="icon"
        *ngFor="let y of remainingLoopCounter">
     </i>
