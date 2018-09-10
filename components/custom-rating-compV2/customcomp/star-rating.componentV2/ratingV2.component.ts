@@ -22,11 +22,14 @@ export class RatingComponentV2 implements OnInit {
 
   // Angular doesn't know about boolean attributes.  See:
   // https://stackoverflow.com/questions/41856883/angular2-boolean-input-property-getting-set-as-string-binding-nested-properti
-  // @Input() showRange: string;
-  set showRange (value: string) {
-     // debugger;
-     this.isShowingRange = value !== 'false';
-  }
+  @Input() showRange: string;
+  // The statement below ended up causing problems between code generation and compile (one would complain about a
+    // duplicate definition and the other one would complain about missing attribute.
+    // so ended up just testing the boolean for its equivalent string value - very simple :)
+  // set showRange (value: string) {
+  //    // debugger;
+  //    this.isShowingRange = value !== 'false';
+  // }
   isShowingRange: Boolean;
 
   //iconRangeColor = 'lightgrey';
@@ -47,6 +50,9 @@ export class RatingComponentV2 implements OnInit {
 
   ngOnInit() {
     // debugger;
+
+    this.isShowingRange = this.showRange !== 'false';
+
     if ( this.icon === undefined ) {
       this.icon = 'fa fa-star';
     }
@@ -64,6 +70,8 @@ export class RatingComponentV2 implements OnInit {
   // Need to recompute the size of the array when the data changes.
   ngOnChanges() {
       if ( this.debugComp ) { console.log( `RatingComponentV2: rating value: ${this.rating}` ); }
+
+      this.isShowingRange = this.showRange !== 'false';
 
       let ratingCount;
       if ( this.rating !== undefined ) {
