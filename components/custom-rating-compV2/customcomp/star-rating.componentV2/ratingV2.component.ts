@@ -22,10 +22,10 @@ export class RatingComponentV2 implements OnInit {
 
   // Angular doesn't know about boolean attributes.  See:
   // https://stackoverflow.com/questions/41856883/angular2-boolean-input-property-getting-set-as-string-binding-nested-properti
-  @Input() showRange: string;
+  // @Input() showRange: string;
   set showRange (value: string) {
      // debugger;
-     this.isShowingRange = value != 'false';
+     this.isShowingRange = value !== 'false';
   }
   isShowingRange: Boolean;
 
