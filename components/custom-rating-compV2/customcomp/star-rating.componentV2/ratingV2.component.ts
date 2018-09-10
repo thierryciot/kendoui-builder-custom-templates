@@ -53,6 +53,9 @@ export class RatingComponentV2 implements OnInit {
 
     this.isShowingRange = this.showRange !== 'false';
 
+    const ratingCount = this.normalizeRatingValue();
+    this.loopCounter = RatingComponentV2.createEmptyArrayWithSpecificLengthForNgFor(ratingCount);
+
     if ( this.icon === undefined ) {
       this.icon = 'fa fa-star';
     }
@@ -73,20 +76,7 @@ export class RatingComponentV2 implements OnInit {
 
       this.isShowingRange = this.showRange !== 'false';
 
-      let ratingCount;
-      if ( this.rating !== undefined ) {
-          ratingCount = Number(this.rating);
-          if ( isNaN(ratingCount)) {
-              ratingCount = 0;
-          }
-      }
-      else {  // no data is selected in combo-box so model is not initialized with any data
-        ratingCount = 0;
-      }
-
-      if ( ratingCount > 5 ) {
-          ratingCount = 5;
-      }
+      const ratingCount = this.normalizeRatingValue();
 
       this.loopCounter = RatingComponentV2.createEmptyArrayWithSpecificLengthForNgFor(ratingCount);
 
@@ -102,4 +92,23 @@ export class RatingComponentV2 implements OnInit {
 
       if ( this.debugComp ) { console.log(`loopCount1: $loopCount1, loopCount2: $loopCount1, remaining: $remaining`); }
   }
+
+    private normalizeRatingValue() {
+        let ratingCount;
+        if (this.rating !== undefined) {
+            ratingCount = Number(this.rating);
+            if (isNaN(ratingCount)) {
+                ratingCount = 0;
+            }
+        }
+        else {  // no data is selected in combo-box so model is not initialized with any data
+            ratingCount = 0;
+        }
+
+        if ( ratingCount > 5 ) {
+            ratingCount = 5;
+        }
+
+        return ratingCount;
+    }
 }
