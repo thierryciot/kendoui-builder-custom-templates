@@ -20,12 +20,17 @@ export class OpenLayerMap implements OnInit, OnChanges {
     @Input() lat: number;
     @Input() componentId: string;
     // @ViewChild('olMapTag') olMapEl: any;
+    @Input() height: string;
+    @Input() marginBottom: string;
+    @Input() marginTop: string;
+    @Input() marginLeft: string;
+    @Input() marginRight: string;
 
     openLayerMap: any;
     olView: any;
 
     // Set it to true to output debug data in the component itself.
-    debugComp = true;
+    // debugComp = true;
 
     constructor() {
     }
@@ -39,8 +44,14 @@ export class OpenLayerMap implements OnInit, OnChanges {
             this.lat = 45;
         }
 
+        this.height += 'px';
+        this.marginTop += 'px';
+        this.marginBottom += 'px';
+        this.marginRight += 'px';
+        this.marginLeft += 'px';
+
         // const mapElId = this.olMapEl.nativeElement.id;
-        console.log(`ngOnInit: Map container element ID: ${this.componentId} `);
+        // console.log(`ngOnInit: Map container element ID: ${this.componentId} `);
     }
 
     ngOnChanges() {
@@ -52,7 +63,7 @@ export class OpenLayerMap implements OnInit, OnChanges {
             return;
         }
 
-        debugger;
+        // debugger;
 
         // const washingtonLonLat = [-77.036667, 38.895];
         // const washingtonWebMercator = ol.proj.fromLonLat(washingtonLonLat);
@@ -62,7 +73,7 @@ export class OpenLayerMap implements OnInit, OnChanges {
         const zoom = 10;
 
 
-        // to temporarily remove a map is to call map.setTarget(null);
+        // to temporarily remove a map need to call map.setTarget(null);
         if ( this.openLayerMap === undefined ) {
             const olView = new ol.View({
                 center: coordWebMercator,

@@ -13,10 +13,16 @@
       config.declarations.push(OpenLayerMap);
    </code>
 %>
+<!-- Custom map component -->
 <custom-olmap
         [lon]="$dataModels.<%- model %>.lon"
         [lat]="$dataModels.<%- model %>.lat"
         componentId="<%-id%>Map"
+        [height]="$config.components.<%-id%>.height"
+        [marginTop]="$config.components.<%-id%>.marginTop"
+        [marginBottom]="$config.components.<%-id%>.marginBottom"
+        [marginLeft]="$config.components.<%-id%>.marginLeft"
+        [marginRight]="$config.components.<%-id%>.marginRight"
 >
 </custom-olmap>
 
