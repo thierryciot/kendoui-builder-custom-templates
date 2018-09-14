@@ -9,6 +9,8 @@ It assumes the OL CSS and JS are already included in application:
 <script src="https://openlayers.org/en/v4.6.5/build/ol.js" type="text/javascript"></script>
 
 See http://openlayers.org/en/latest/doc/quickstart.html
+
+We add these in KUIB project in app properties, head: See https://www.telerik.com/kendo-ui-builder/documentation/extension-points/extending-head/
  */
 @Component({
     selector: 'custom-olmap',
