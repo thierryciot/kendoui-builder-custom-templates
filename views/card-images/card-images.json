@@ -88,6 +88,7 @@
           "order": 3,
           "properties": {
             "field2": {
+              "default": "",
               "type": "string",
               "title": "Name Icon",
               "editorType": "icon",
@@ -95,6 +96,7 @@
               "order": 1
             },
             "field3": {
+              "default": "",
               "type": "string",
               "title": "Price Icon",
               "editorType": "icon",
@@ -102,6 +104,7 @@
               "order": 2
             },
             "field4": {
+              "default": "",
               "type": "string",
               "title": "Description Icon",
               "editorType": "icon",
@@ -273,13 +276,6 @@
           "order": 2
         }
       }
-    },
-    "testIcon": {
-      "type": "string",
-      "title": "Field2 Icon",
-      "editorType": "icon",
-      "editorRowType": "window",
-      "order": 7
     }
   },
   "required": [
