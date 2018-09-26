@@ -85,6 +85,9 @@
                     <td with="50%">
                         <% if ( view.cardsData.fieldsMapping.field2 ) { %>
                         <div class="fieldContainer field2Container">
+                            <% if ( view.cardsData.fieldsIcon.field2 ) { %>
+                                <i class="fa <%- view.cardsData.fieldsIcon.field2 %>"></i>
+                            <% } %>
                             <span class="fieldValue">{{item['<%- view.cardsData.fieldsMapping.field2 %>']}}</span>
                         </div>
                         <% } %>
@@ -95,7 +98,7 @@
                             <% if ( view.cardsData.fieldsIcon.field3 ) { %>
                                 <i class="fa <%- view.cardsData.fieldsIcon.field3 %>"></i>
                             <% } %>
-                            <span class="fieldValue">${{item['<%- view.cardsData.fieldsMapping.field3 %>']}}</span>
+                            <span class="fieldValue">{{item['<%- view.cardsData.fieldsMapping.field3 %>']}}</span>
                         </div>
                         <% } %>
                     </td>
