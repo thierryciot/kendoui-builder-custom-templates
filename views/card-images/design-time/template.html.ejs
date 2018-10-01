@@ -143,6 +143,9 @@
                     <td with="50%">
                         <% if ( cardsData.fieldsMapping.field2 ) { %>
                             <div class="fieldContainer field2">
+                                <% if ( cardsData.fieldsIcon.field2 ) { %>
+                                    <i class="fa <%- cardsData.fieldsIcon.field2 %>"></i>
+                                <% } %>
                                 <span class="fieldValue" title="Data source field: <%- cardsData.fieldsMapping.field2 %>"><%- mySampleData[i][cardsData.fieldsMapping.field2] %></span>
                             </div>
                         <% } %>
